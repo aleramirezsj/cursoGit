@@ -3,3 +3,4 @@ Docente del Instituto Superior de Profesorado Nº20 "Senador Nestar J. Zamaro" d
 En la carrera Técnico Superior en Desarrollo de Software.
 Estamos aprendiendo GIT
 Con un curso de Platzi
+Estamos probando el uso de git reset HEAD
