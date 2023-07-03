@@ -11,17 +11,78 @@
     <title>Prueba Bloqspot</title>
 </head>
 <body>
-    <div class="container">
-        <div class="cabecera display-1">
-            BlogISP
-            <span>Creando nuestro Blog</span>
+    <header>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container">
+              <a class="navbar-brand" href="#">BlogISP</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                  <li class="nav-item">
+                    <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#iniciarSesionModal">Iniciar sesión</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#registrarseModal">Registrarse</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+    </header>
+    <main class="container">
+        <div>
+            <div class="cabecera display-1">
+                BlogISP
+                <span>Creando nuestro Blog</span>
+            </div>
+            <h1>Creando nuestro Blog</h1>
+            <hr>
+            <h2>Y aprendiendo Git en el intento</h2>
+            <h3>Crearemos este proyecto web para realizar las pruebas de GIT</h3>
+            <p>En el curso intentaremos seguir los ejemplos, haciendo nuestras adaptaciones</p>
+            <p>Seguimos probando resolver conflictos(08/05/2023)</p>
         </div>
-        <h1>Creando nuestro Blog</h1>
-        <hr>
-        <h2>Y aprendiendo Git en el intento</h2>
-        <h3>Crearemos este proyecto web para realizar las pruebas de GIT</h3>
-        <p>En el curso intentaremos seguir los ejemplos, haciendo nuestras adaptaciones</p>
-        <p>Seguimos probando resolver conflictos(08/05/2023)</p>
+    </main>
+
+    <!-- Modal Iniciar Sesión-->
+    <div class="modal fade" id="iniciarSesionModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Iniciar sesión</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+            ...
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+        </div>
     </div>
+
+    <!-- Modal Registrarse-->
+    <div class="modal fade" id="registrarseModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Registrarse</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+            ...
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+        </div>
+    </div>
+
 </body>
 </html>
