@@ -5,6 +5,7 @@ import './formRegistrarse.js';
 import './cerrarSesion.js';
 import './iniciarSesion.js';
 import './loginGoogle.js';
+import './loginFacebook.js';
 
 onAuthStateChanged(auth, async (user)=>{
     loginCheck(user);
