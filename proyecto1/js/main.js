@@ -4,6 +4,7 @@ import { loginCheck } from "./loginCheck.js";
 import './formRegistrarse.js';
 import './cerrarSesion.js';
 import './iniciarSesion.js';
+import './loginGoogle.js';
 
 onAuthStateChanged(auth, async (user)=>{
     loginCheck(user);
