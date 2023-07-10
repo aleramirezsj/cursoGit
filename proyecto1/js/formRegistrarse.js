@@ -1,4 +1,4 @@
-import { createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-auth.js";
+import { createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-auth.js";
 import { auth } from "./firebase.js";
 
 import { messageBox } from "./messageBox.js";
@@ -15,6 +15,8 @@ formRegistrarse.addEventListener('submit',async (e)=>{
         const ventanaRegistrarse=document.getElementById("registrarseModal");
         const formReg= bootstrap.Modal.getInstance(ventanaRegistrarse);
         formReg.hide();
+        console.log(credencialesUsuario);
+        messageBox(`El usuario ${credencialesUsuario.user.email} fue creado correctamente`,'notificacion');
     } catch (error) {
         switch (error.code) {
             case 'auth/email-already-in-use':

@@ -1,15 +1,19 @@
- const elementosLogin=document.querySelectorAll('.login');
- const elementosLogout=document.querySelectorAll('.logout');
+//obtenemos los elementos que deben visualizarse cuando estamos conectados y
+//también obtenemos los elementos que deben visualizarse cuando estamos desconectados
+
+ 
+ const elementosConectarse=document.querySelectorAll('.conectarse');
+ const elementosDesconectarse=document.querySelectorAll('.desconectarse');
 
  export const loginCheck= (user)=>{
-    if(user)
+    if(user)//cuando nos conectamos
     {
-        elementosLogin.forEach(link=>link.style.display='none');
-        elementosLogout.forEach(link=>link.style.display='block');           
-    }else
+        elementosConectarse.forEach(elemento=>elemento.style.display='none');
+        elementosDesconectarse.forEach(elemento=>elemento.style.display='block');           
+    }else //cuando nos desconectamos
     {
-        elementosLogin.forEach(link=>link.style.display='block');
-        elementosLogout.forEach(link=>link.style.display='none');                   
+        elementosConectarse.forEach(elemento=>elemento.style.display='block');
+        elementosDesconectarse.forEach(elemento=>elemento.style.display='none');                   
     }
 
 }
