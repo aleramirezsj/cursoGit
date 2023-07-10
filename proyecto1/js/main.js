@@ -1,6 +1,7 @@
 import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-auth.js";
 import { auth } from "./firebase.js";
 import { loginCheck } from "./loginCheck.js";
+import './formIniciarSesion.js';
 import './formRegistrarse.js';
 import './cerrarSesion.js';
 
