@@ -2,6 +2,7 @@ import { createUserWithEmailAndPassword } from "https://www.gstatic.com/firebase
 import { auth } from "./firebase.js";
 
 import { messageBox } from "./messageBox.js";
+import { gestionDeErrores } from "./gestionDeErrores.js";
 
 const formRegistrarse=document.getElementById("formRegistrarse");
 //console.log(formRegistrarse);
@@ -18,20 +19,7 @@ formRegistrarse.addEventListener('submit',async (e)=>{
         console.log(credencialesUsuario);
         messageBox(`El usuario ${credencialesUsuario.user.email} fue creado correctamente`,'notificacion');
     } catch (error) {
-        switch (error.code) {
-            case 'auth/email-already-in-use':
-                messageBox('Este correo electrónico ya fue usado en otra cuenta');
-                break;
-            case 'auth/invalid-email':
-                messageBox('El correo electrónico proporcionado no es válido');
-                break;
-            case 'auth/weak-password':
-                messageBox('La contraseña proporcionada es debil');
-                break;
-            default:
-                messageBox('error en validación del registro');
-        }
-
+        gestionDeErrores(error.code);
     }
     
 });

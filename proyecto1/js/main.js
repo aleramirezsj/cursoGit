@@ -3,6 +3,7 @@ import { auth } from "./firebase.js";
 import { loginCheck } from "./loginCheck.js";
 import './formRegistrarse.js';
 import './cerrarSesion.js';
+import './iniciarSesion.js';
 
 onAuthStateChanged(auth, async (user)=>{
     loginCheck(user);
