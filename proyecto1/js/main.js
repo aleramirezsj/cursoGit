@@ -6,6 +6,7 @@ import './cerrarSesion.js';
 import './iniciarSesion.js';
 import './loginGoogle.js';
 import './loginFacebook.js';
+import './loginGithub.js';
 
 onAuthStateChanged(auth, async (user)=>{
     loginCheck(user);
