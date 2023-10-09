@@ -7,6 +7,7 @@ import './iniciarSesion.js';
 import './loginGoogle.js';
 import './loginFacebook.js';
 import './loginGithub.js';
+import './reseteoPassword.js';
 
 onAuthStateChanged(auth, async (user)=>{
     loginCheck(user);
