@@ -13,9 +13,16 @@ formIniciarSesion.addEventListener('submit', async (e)=>{
     const password=document.getElementById('txtPasswordLogin').value
     try {
         const credencialesUsuario=await signInWithEmailAndPassword(auth,email,password);
-        const ventanaIniciarSesion=document.getElementById("iniciarSesionModal");
-        const formIniciar= bootstrap.Modal.getInstance(ventanaIniciarSesion);
-        formIniciar.hide();
+        console.log(credencialesUsuario);
+
+        if(credencialesUsuario.user.emailVerified)
+        {
+            const ventanaIniciarSesion=document.getElementById("iniciarSesionModal");
+            const formIniciar= bootstrap.Modal.getInstance(ventanaIniciarSesion);
+            formIniciar.hide();
+        }else{
+            messageBox("El email de esta cuenta no fue verificado");
+        }
     } catch (error) {
         gestionDeErrores(error.code);
     }

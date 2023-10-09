@@ -1,4 +1,4 @@
-import { createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-auth.js";
+import { createUserWithEmailAndPassword, sendEmailVerification } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-auth.js";
 import { auth } from "./firebase.js";
 
 import { messageBox } from "./messageBox.js";
@@ -12,12 +12,17 @@ formRegistrarse.addEventListener('submit',async (e)=>{
     const password=formRegistrarse['txtPassword'].value;
     console.log(`email: ${email},password:${password}`);
     try{
-        const credencialesUsuario = await createUserWithEmailAndPassword(auth, email, password);
+        await createUserWithEmailAndPassword(auth, email, password)
+        .then((credencialesUsuario)=>{
+            sendEmailVerification(auth.currentUser).then(()=>{
+                messageBox('La verificacion del correo fue enviada')
+            })
+        });
         const ventanaRegistrarse=document.getElementById("registrarseModal");
         const formReg= bootstrap.Modal.getInstance(ventanaRegistrarse);
         formReg.hide();
-        console.log(credencialesUsuario);
-        messageBox(`El usuario ${credencialesUsuario.user.email} fue creado correctamente`,'notificacion');
+        //console.log(credencialesUsuario);
+        //messageBox(`El usuario ${credencialesUsuario.user.email} fue creado correctamente`,'notificacion');
     } catch (error) {
         gestionDeErrores(error.code);
     }
