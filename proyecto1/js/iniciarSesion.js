@@ -13,6 +13,7 @@ formIniciarSesion.addEventListener('submit', async (e)=>{
     const password=document.getElementById('txtPasswordLogin').value
     try {
         const credencialesUsuario=await signInWithEmailAndPassword(auth,email,password);
+        console.log(credencialesUsuario);
         const ventanaIniciarSesion=document.getElementById("iniciarSesionModal");
         const formIniciar= bootstrap.Modal.getInstance(ventanaIniciarSesion);
         formIniciar.hide();
